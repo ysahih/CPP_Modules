@@ -25,7 +25,7 @@ public :
 		return(firstname);
 	}
 	std::string get_lastname(){
-		return(firstname);
+		return(lastname);
 	}
 	std::string get_nickname(){
 		return(nickname);
@@ -45,7 +45,6 @@ std::string prompt(std::string s){
 	std::cout << s;
 	std::cin >> line;
 	return (line);
-	// if (line[0] == 0)
 }
 
 
