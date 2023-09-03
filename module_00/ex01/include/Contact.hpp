@@ -7,6 +7,7 @@
 #define LINE "- - - - - - - - - - - - - - - - - - - - - - -"
 #define PIPE "|"
 #define  TABLE "|     index|first name| last name|  nickname|"
+
 class Contact 
 {
 private :
