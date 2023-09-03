@@ -19,6 +19,6 @@ int	main()
 		if (cmd == "ADD") add(&phonebook);
 		else if (cmd == "SEARCH")
 			phonebook.search_contacts();
-		else if (cmd == "EXIT"|| cmd.empty()) exit(0);
+		else if (cmd == "EXIT" || cmd.empty()) exit(0);
 	}
 }

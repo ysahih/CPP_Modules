@@ -1,3 +1,4 @@
+#include "../include/Contact.hpp"
 #include "../include/PhoneBook.hpp"
 
 bool	PhoneBook::empty(){

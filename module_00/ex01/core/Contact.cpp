@@ -1,3 +1,4 @@
+#include "../include/PhoneBook.hpp"
 #include "../include/Contact.hpp"
 
 std::string Contact::get_firstname(){
