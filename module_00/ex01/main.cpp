@@ -17,11 +17,8 @@ int	main()
 	while (true){
 		std::cin >> cmd;
 		if (cmd == "ADD") add(&phonebook);
-		else if (cmd == "SEARCH"){
+		else if (cmd == "SEARCH")
 			phonebook.search_contacts();
-		}
-			// phonebook.search_contacts();
-		else if (cmd == "EXIT")	exit(0);
-		// std::cout <<
+		else if (cmd == "EXIT"|| cmd.empty()) exit(0);
 	}
 }

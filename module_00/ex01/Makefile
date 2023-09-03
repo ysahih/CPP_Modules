@@ -3,8 +3,7 @@ CPPFLAGS = -std=c++98
 
 NAME = PhoneBook
 CC = c++
-SRCS = main.cpp
-#  Contact.cpp PhoneBook.cpp
+SRCS = main.cpp core/Contact.cpp core/PhoneBook.cpp
 
 INC = ./include/Contact.hpp ./include/PhoneBook.hpp
 
