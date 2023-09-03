@@ -1,0 +1,164 @@
+{
+  "tldrawFileFormatVersion": 1,
+  "schema": {
+    "schemaVersion": 1,
+    "storeVersion": 4,
+    "recordVersions": {
+      "asset": {
+        "version": 0,
+        "subTypeKey": "type",
+        "subTypeVersions": {
+          "image": 2,
+          "video": 2,
+          "bookmark": 0
+        }
+      },
+      "camera": {
+        "version": 0
+      },
+      "document": {
+        "version": 1
+      },
+      "instance": {
+        "version": 12
+      },
+      "instance_page_state": {
+        "version": 2
+      },
+      "page": {
+        "version": 0
+      },
+      "shape": {
+        "version": 1,
+        "subTypeKey": "type",
+        "subTypeVersions": {
+          "group": 0,
+          "bookmark": 1,
+          "embed": 1,
+          "image": 2,
+          "text": 1,
+          "video": 1,
+          "arrow": 1,
+          "draw": 1,
+          "frame": 0,
+          "geo": 6,
+          "line": 0,
+          "note": 4,
+          "highlight": 0
+        }
+      },
+      "instance_presence": {
+        "version": 2
+      },
+      "pointer": {
+        "version": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "gridSize": 10,
+      "name": "",
+      "id": "document:document",
+      "typeName": "document"
+    },
+    {
+      "id": "pointer:pointer",
+      "typeName": "pointer",
+      "x": -220.14020097889627,
+      "y": -124.65565274369234,
+      "lastActivityTimestamp": 1687538436301
+    },
+    {
+      "id": "page:fY-8bpWXy-_U3wvQ_eHhx",
+      "name": "Page 1",
+      "index": "a1",
+      "typeName": "page"
+    },
+    {
+      "followingUserId": null,
+      "propsForNextShape": {
+        "opacity": "1",
+        "color": "black",
+        "labelColor": "black",
+        "dash": "draw",
+        "fill": "none",
+        "size": "m",
+        "icon": "file",
+        "font": "draw",
+        "align": "middle",
+        "verticalAlign": "middle",
+        "geo": "rectangle",
+        "arrowheadStart": "none",
+        "arrowheadEnd": "arrow",
+        "spline": "line"
+      },
+      "brush": null,
+      "scribble": null,
+      "cursor": {
+        "type": "default",
+        "color": "white",
+        "rotation": 0
+      },
+      "isFocusMode": false,
+      "exportBackground": true,
+      "isDebugMode": false,
+      "isToolLocked": false,
+      "screenBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1146,
+        "h": 1168
+      },
+      "zoomBrush": null,
+      "isGridMode": false,
+      "isPenMode": false,
+      "id": "instance:instance",
+      "currentPageId": "page:fY-8bpWXy-_U3wvQ_eHhx",
+      "typeName": "instance"
+    },
+    {
+      "editingId": null,
+      "croppingId": null,
+      "selectedIds": [
+        "shape:S7QIQsNz0YZSU9iJDc8hK"
+      ],
+      "hoveredId": "shape:S7QIQsNz0YZSU9iJDc8hK",
+      "erasingIds": [],
+      "hintingIds": [],
+      "focusLayerId": null,
+      "id": "instance_page_state:page:fY-8bpWXy-_U3wvQ_eHhx",
+      "pageId": "page:fY-8bpWXy-_U3wvQ_eHhx",
+      "typeName": "instance_page_state"
+    },
+    {
+      "x": 298.53962897265615,
+      "y": 340.4611539160086,
+      "z": 1.028088655269467,
+      "id": "camera:page:fY-8bpWXy-_U3wvQ_eHhx",
+      "typeName": "camera"
+    },
+    {
+      "x": -279.67593840279676,
+      "y": -146.49743002814728,
+      "rotation": 0,
+      "isLocked": false,
+      "id": "shape:S7QIQsNz0YZSU9iJDc8hK",
+      "type": "text",
+      "props": {
+        "opacity": "1",
+        "color": "black",
+        "size": "m",
+        "w": 139.8392093225484,
+        "text": "PhoneBook",
+        "font": "draw",
+        "align": "middle",
+        "autoSize": false,
+        "scale": 1
+      },
+      "parentId": "page:fY-8bpWXy-_U3wvQ_eHhx",
+      "index": "a1",
+      "typeName": "shape"
+    }
+  ]
+}
