@@ -1,5 +1,4 @@
 #include "../include/PhoneBook.hpp"
-#include "../include/Contact.hpp"
 
 std::string Contact::get_firstname(){
 	return(this->firstname);
@@ -22,14 +21,20 @@ std::string Contact::get_phonenumber(){
 }
 
 std::string prompt(std::string s){
+	
 	std::string line;
 
-	std::cout << s;
-	std::cin >> line;
-	return (line);
+	while (true){
+		std::cout << s;
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(0);
+		if (!line.empty())
+			return (line);
+	}
 }
 
-void	Contact::get_info(){
+void	Contact::get_info() {
 	this->firstname = prompt("[ First Name ] : ");
 	this->lastname = prompt("[ Last Name ] : ");
 	this->nickname = prompt("[ Nick Name ] : ");

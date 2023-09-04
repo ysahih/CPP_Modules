@@ -17,7 +17,6 @@ public :
 	void add_contact(Contact contact);
 	Contact get_contact(int index);
 	void search_contacts(void);
-
 };
 
 #endif

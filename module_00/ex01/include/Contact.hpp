@@ -6,7 +6,7 @@
 
 #define LINE "- - - - - - - - - - - - - - - - - - - - - - -"
 #define PIPE "|"
-#define  TABLE "|     index|first name| last name|  nickname|"
+#define  TABLE "|   index  |first name| last name| nickname |"
 
 class Contact 
 {
@@ -25,5 +25,5 @@ public :
 	std::string get_darkestsecret();
 	std::string get_phonenumber();
 };
-       
+
 #endif
