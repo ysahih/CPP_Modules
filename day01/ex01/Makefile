@@ -1,8 +1,8 @@
-NAME = Brainz
+NAME = Zombies
 CC = c++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 INC = Zombie.hpp
 
 OBJS = $(SRCS:.cpp=.o)
