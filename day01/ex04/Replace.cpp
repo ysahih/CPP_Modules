@@ -21,19 +21,24 @@ Replace::~Replace() {
 void	Replace::replace(std::string s1, std::string s2){
 	std::string line;
 	size_t index;
+	size_t hold;
 
 	while (true) {
 		std::getline(oldFile, line);
+		hold = 0;
 		while (true) {
-			index = line.find(s1);
-			if (index == std::string::npos) break;
+			index = line.find(s1, hold);
+			if (index == std::string::npos || s1 == "") break;
 			else {
 				line.erase(index, s1.length());
 				line.insert(index, s2);
+				hold += s2.length();
 			}
+			hold += index;
 		}
-		newFile << line << std::endl;
+		newFile << line;
 		if (oldFile.eof())
 			return ;
+		newFile << std::endl;
 	}
 }
