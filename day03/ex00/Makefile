@@ -1,0 +1,24 @@
+NAME = ClapTrap
+CC = c++
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+
+SRCS = main.cpp ClapTrap.cpp
+INC = ClapTrap.hpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+all : $(NAME)
+
+$(NAME): $(OBJS) $(INC)
+	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+%.o : %.cpp  $(INC) 
+	$(CC)  $(CPPFLAGS) -o $@ -c $< 
+
+clean:
+	rm -f $(OBJS) *.replace
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean $(NAME)
