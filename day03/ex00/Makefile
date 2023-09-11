@@ -16,7 +16,7 @@ $(NAME): $(OBJS) $(INC)
 	$(CC)  $(CPPFLAGS) -o $@ -c $< 
 
 clean:
-	rm -f $(OBJS) *.replace
+	rm -f $(OBJS) 
 
 fclean: clean
 	rm -f $(NAME)

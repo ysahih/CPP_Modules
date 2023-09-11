@@ -6,16 +6,38 @@ cost 1 energy point each. Of course, ClapTrap can’t do anything if it has no h
 or energy points left.
 */
 
+
+
 ClapTrap::ClapTrap(void) {
 
-	std::cout << "You should name your Clap-Trap!" << std::endl;
-	exit(0);
+	std::cout << "Default constructor called!" << std::endl;
+    this->_name = "claptrap";
+	this->_hit_points = 10;
+	this->_energy_points = 10;
+	this->_attack_damage = 0;
+}
+
+ClapTrap::ClapTrap(ClapTrap &a) {
+
+	std::cout << "copy constructor called!" << std::endl;
+	*this = a;
 }
 
 ClapTrap::~ClapTrap(){
 
 	std::cout << "Destructor called!" << std::endl;
 }
+
+ClapTrap &ClapTrap::operator=(ClapTrap &a) {
+
+	std::cout << "copy operator assignment called!" << std::endl;
+    this->_name = a._name;
+    this->_hit_points = a._hit_points;
+    this->_energy_points = a._energy_points;
+    this->_attack_damage = a._attack_damage;
+    return *this;
+}
+
 
 ClapTrap::ClapTrap(std::string name) : _name(name){
 	
@@ -57,6 +79,15 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 
-	this->_attack_damage += amount;
-	std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damage!" << std::endl;
+    if (this->_hit_points > amount) {
+
+	    this->_hit_points -= amount;
+	    std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damage!" << std::endl;
+    }
+    else {
+	    std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+        this->_hit_points = 0;
+    }
+
+
 }
