@@ -9,7 +9,7 @@ ClapTrap::ClapTrap(void) {
 	this->_attack_damage = 0;
 }
 
-ClapTrap::ClapTrap(ClapTrap &a) {
+ClapTrap::ClapTrap(const ClapTrap &a) {
 
 	std::cout << "copy constructor called!" << std::endl;
 	*this = a;
@@ -20,7 +20,7 @@ ClapTrap::~ClapTrap(){
 	std::cout << "Destructor called!" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(ClapTrap &a) {
+ClapTrap &ClapTrap::operator=(const ClapTrap &a) {
 
 	std::cout << "copy operator assignment called!" << std::endl;
     this->_name = a._name;
@@ -80,6 +80,5 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	    std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
         this->_hit_points = 0;
     }
-
 
 }

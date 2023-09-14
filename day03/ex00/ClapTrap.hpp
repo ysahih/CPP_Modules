@@ -12,10 +12,10 @@ private :
 
 public :
 	ClapTrap();
-	ClapTrap(ClapTrap &a);
+	ClapTrap(const ClapTrap &a);
 	ClapTrap(std::string name);
 	~ClapTrap();
-	ClapTrap& operator=(ClapTrap &a);
+	ClapTrap& operator=(const ClapTrap &a);
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
