@@ -3,12 +3,12 @@
 
 int main (){
 
-    ScavTrap n("frex");
+    // ScavTrap n("frex");
     // ScavTrap m("za3boul");
     // ClapTrap m("holly!");
     // ClapTrap *a = new ScavTrap();
     
-    ClapTrap *b = &n;
+    ClapTrap *b = new ScavTrap();
 
     b->attack("slave");
     // a->attack("slave");
