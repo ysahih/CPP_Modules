@@ -17,6 +17,9 @@ class Animal {
         Animal(std::string &type);
         Animal& operator=(const Animal& copy);
         virtual ~Animal();
+        // void  setter(){
+        //     this->type = "hello";
+        // }
         virtual void makeSound() const;
         std::string getType() const;
 

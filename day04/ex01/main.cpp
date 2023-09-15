@@ -2,16 +2,25 @@
 #include "include/Dog.hpp"
 
 
+void fun(){
+    system("leaks Animal");
+}
+
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    // const Animal* j = new Dog();
+    // const Animal* i = j;
+    atexit(fun);
 
-    j->makeSound();
-    i->makeSound();
+    Cat j;
+    Cat i = j;
+    // i.setter();
 
-    delete j;//should not create a leak
-    delete i;
+    j.makeSound();
+    i.makeSound();
+
+    // delete j;//should not create a leak
+    // delete i;
     
     return 0;
 }

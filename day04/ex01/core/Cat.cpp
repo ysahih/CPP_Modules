@@ -29,7 +29,10 @@ Cat::Cat(const Cat &copy) {
 Cat& Cat::operator=(const Cat& copy) {
 	std::cout << "Cat: copy Assignment operator called!" << std::endl;
 	this->type = copy.type;
-	this->ideas = copy.ideas;
+	if (this->ideas)
+		delete this->ideas;
+	this->ideas = new Brain();
+	*this->ideas = *copy.ideas;
 	return *this;
 }
 

@@ -2,7 +2,7 @@ NAME = Animal
 CC = c++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = core/Animal.cpp  core/Cat.cpp core/Dog.cpp main.cpp 
+SRCS = core/Animal.cpp  core/Cat.cpp core/Dog.cpp core/Brain.cpp main.cpp 
 INC = include/Dog.hpp include/Cat.hpp include/Animal.hpp include/Brain.hpp
 
 OBJS = $(SRCS:.cpp=.o)
