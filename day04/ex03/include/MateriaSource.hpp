@@ -1,7 +1,8 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+// #include "Character.hpp"
+#include "Character.hpp"
 
 class IMateriaSource {
     public:
@@ -13,13 +14,18 @@ class IMateriaSource {
 class MateriaSource : public IMateriaSource {
     private:
         AMateria* m[4];
+        leftover *left;
     public:
         MateriaSource();
 		MateriaSource(const MateriaSource& copy);
 		MateriaSource& operator=(const MateriaSource&copy);
 		~MateriaSource();
-        void learnMateria(AMateria*);
+        void learnMateria(AMateria* m);
         AMateria* createMateria(std::string const & type);
 };
 
+void collect_materia(leftover** left, AMateria *m);
+int empty_slot(AMateria *m[4]);
+void delete_materias(AMateria *m[4] , int max);
+void delete_leftovers(leftover *lo);
 #endif

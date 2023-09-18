@@ -1,4 +1,4 @@
-#include "../include/Ice.hpp"
+#include "../include/MateriaSource.hpp"
 
 
 Ice::Ice() {
@@ -6,17 +6,17 @@ Ice::Ice() {
 }
 
 Ice::~Ice () {
-	
 }
 
-// Ice::Ice(const Ice& copy) {
-// 	*this = copy;
-// }
+Ice::Ice(const Ice& copy) {
+	*this = copy;
+}
 
-// Ice &Ice::operator=(const Ice& copy) {
+Ice &Ice::operator=(const Ice& copy) {
 
-// 	//copying
-// }
+	this->_type = copy._type;
+	return *this;
+}
 
 AMateria* Ice::clone() const {
 	return new Ice();

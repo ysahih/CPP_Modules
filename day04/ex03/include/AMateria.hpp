@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+// #include "Character.hpp"
 
 class ICharacter;
 
@@ -13,8 +14,8 @@ class AMateria {
     public:
         AMateria();
         AMateria(std::string const & type);
-        // AMateria(const AMateria& copy);
-        // AMateria& operator=(const AMateria& copy);
+        AMateria(const AMateria& copy);
+        AMateria& operator=(const AMateria& copy);
         virtual ~AMateria();
         std::string const & getType() const; //Returns the materia type
         virtual void use(ICharacter& target) = 0;

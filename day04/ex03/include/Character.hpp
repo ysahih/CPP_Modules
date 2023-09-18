@@ -1,9 +1,20 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+#include <climits>
 #include <iostream>
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
+
+typedef struct lo
+{
+	AMateria *ptr;
+	struct lo *next;
+} leftover;
+
+// class AMateria;
 //---interface---//
 class ICharacter
 {
@@ -20,7 +31,7 @@ class Character :public ICharacter {
 	private:
 		std::string name;
 		AMateria *m[4];
-		AMateria *left[];
+		leftover *left;
 	public:
 		Character();
 		Character(const Character& copy);
@@ -32,6 +43,7 @@ class Character :public ICharacter {
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
 };
+
 
 
 #endif

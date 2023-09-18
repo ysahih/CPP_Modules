@@ -1,21 +1,22 @@
-#include "../include/Cure.hpp"
+#include "../include/MateriaSource.hpp"
 
 Cure::Cure() {
-	this->_type = "Cure";
+	this->_type = "cure";
 }
 
 Cure::~Cure () {
 
 }
 
-// Cure::Cure(const Cure& copy) {
-// 	*this = copy;
-// }
+Cure::Cure(const Cure& copy) {
+	*this = copy;
+}
 
-// Cure &Cure::operator=(const Cure& copy) {
+Cure &Cure::operator=(const Cure& copy) {
 
-// 	//copying
-// }
+	this->_type = copy._type;
+	return *this;
+}
 
 AMateria* Cure::clone() const {
 	return new Cure();
