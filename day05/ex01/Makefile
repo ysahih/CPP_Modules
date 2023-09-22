@@ -1,0 +1,24 @@
+NAME = Bureaucrat
+CC = c++
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+
+SRCS = Bureaucrat.cpp  main.cpp Form.cpp
+INC = Bureaucrat.hpp Form.hpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+all : $(NAME)
+
+$(NAME): $(OBJS) $(INC)
+	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+%.o : %.cpp  $(INC) 
+	$(CC)  $(CPPFLAGS) -o $@ -c $< 
+
+clean:
+	rm -f $(OBJS) 
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean $(NAME)
