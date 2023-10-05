@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <sstream>
 
 ScalarConverter::ScalarConverter() {}
 
@@ -33,33 +34,34 @@ void ScalarConverter::convert(std::string literal) {
 	float	f;
 	double	d;
 
-
+	std::cout.precision(10);
 	if (literal.length() == 1 && std::isprint(literal[0]) && !std::isdigit(literal[0]))
 	{
-		std::cout << "char: " << literal[0] << std::endl;
+		std::cout << "char: '" << literal[0] << "'" << std::endl;
 		std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
 		std::cout << "float: " << static_cast<float>(literal[0]) << ".0f" << std::endl;
 		std::cout << "double: " << static_cast<double>(literal[0]) << ".0" << std::endl;
 		return;
 	}
-	
-	i = atoi(literal.c_str());
-	
+
 	if (literal[literal.length() - 1] == 'f') {
 		f = atof(literal.c_str());
-		d = static_cast<double>(f);
-	} else {  
+		d = atof(literal.c_str());
+	} else {
 		d = atof(literal.c_str());
 		f = static_cast<float>(d);
 	}
+	if (d > INT_MAX || d < INT_MIN)
+		throw "Conversion overflows!";
+	i = atoi(literal.c_str());
 	c = impossible_char(literal);
 	if (c == "impossible") {
-		std::cout << "char: "   <<  c << std::endl;
+		std::cout << "char: " <<  c << std::endl;
 		if (i == 0)
 			std::cout << "int: impossible"  << std::endl;
 		else
-			std::cout << "int: "    << i  << std::endl;
-		std::cout << "float: "  <<  f << "f" << std::endl;
+			std::cout << "int: " << i  << std::endl;
+		std::cout << "float: " <<  f << "f" << std::endl;
 		std::cout << "double: " <<  d << std::endl;
 		return ;
 	} else if (c.empty()) {
@@ -67,11 +69,16 @@ void ScalarConverter::convert(std::string literal) {
 		c.insert(0, 1, '\'');
 		c.push_back('\'');
 	}
+	literal.erase(literal.length() - 1, 1);
+ 	bool flag = (literal.find('.') != std::string::npos && literal.find('.') < literal.length() - 1 && literal[literal.length() - 1] != '0');
 	std::cout << "char: "   <<  c << std::endl;
-	std::cout << "int: "    <<  i << std::endl;
-	std::cout << "float: "  <<  f << ".0f" << std::endl;
-	std::cout << "double: " <<  d << ".0" << std::endl;
-
+	std::cout << "int: "    << i << std::endl;
+	std::cout << "float: "  <<  f;
+	if (!flag || (literal.find('.') == literal.length() - 2 && literal[literal.length() - 1] == '0'))
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
+	std::cout << "double: " <<  d;
+	if(!flag || (literal.find('.') == literal.length() - 2 && literal[literal.length() - 1] == '0'))
+		std::cout << ".0";
+	std::cout << std::endl;
 }
-
-
