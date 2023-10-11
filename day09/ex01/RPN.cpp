@@ -2,6 +2,14 @@
 
 bool isOperator(std::string str) {return str == "+" || str == "-" ||str == "*" ||str == "/";}
 
+bool isDigit(std::string str) {
+	for (size_t i=0; i < str.length(); i++){
+		if (!std::isdigit(str[i]))
+			return false;
+	}
+	return true;
+}
+
 double calculateRNP(std::string expresion)
 {
 	std::stack<double> stack;
@@ -10,7 +18,7 @@ double calculateRNP(std::string expresion)
 
 	while (iss >> str)
 	{
-		if (isdigit(str[0]))
+		if (isDigit(str))
 			stack.push(str[0] - '0');
 		if (isOperator(str)){
 			if (stack.size() < 2)
@@ -36,7 +44,7 @@ double calculateRNP(std::string expresion)
 			}
 		}
 		else 
-			if (!isdigit(str[0]))
+			if (!isDigit(str))
 				throw "Error";
 	}
 	return stack.top();
